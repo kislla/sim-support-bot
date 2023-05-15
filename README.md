@@ -4,7 +4,7 @@ This is a Slack app is designed to listen to messages in customer channels, gath
 Each customer message is replied to with a message that asks for more information about the issue. Once the customer replies to the thread, a new comment is added on the ticket.
 
 If the customer clicks on the ticket classification buttons, the ticket is moved to the relevant group in Monday.
-![](https://pasteboard.co/sTNDPFGUHzRE.png)
+![](https://gcdnb.pbrd.co/images/sTNDPFGUHzRE.png?o=1)
 
 Before getting started, make sure you have a development workspace where you have permissions to install apps. If you don’t have one setup, go ahead and [create one](https://slack.com/create).
 ## Installation
