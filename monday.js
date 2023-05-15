@@ -103,6 +103,3 @@ const getItemByColumnValue = async (columnId, value) => {
 }
 
 module.exports = {createItemObject, getGroupId, addItemToGroup, getItemsByGroupId, addUpdateToItem,moveItemToGroup,getItemByColumnValue};
-//getItemsByGroupId("topics");
-//getItemByColumnValue('text9','1684058589.970999')
-//moveItemToGroup('topics', '1194469307');

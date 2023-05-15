@@ -63,3 +63,4 @@ dev.env
 ./test-result.xml
 ./system-test-result.xml
 coverage/
+.idea/
