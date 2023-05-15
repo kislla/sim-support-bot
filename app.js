@@ -2,7 +2,7 @@ const { App } = require('@slack/bolt');
 const {createItemObject,addItemToGroup,getItemByColumnValue, addUpdateToItem, moveItemToGroup} = require("./monday");
 
 const thread_reply = require("./templates/thread_reply");
-const {addComment,addCase, updateCaseType} = require("./events/msg_handlers")
+const {addComment,addCase, updateCaseType} = require("./events/local_storage_handlers")
 
 let caseStore = new Map();
 require('dotenv').config();
@@ -22,25 +22,39 @@ app.action("support_fr",async ({ ack, body, context,say }) => {
     await ack();
 
     const thread_ts = body.message.thread_ts;
-    updateCaseType(caseStore,body,"support_fr");
+
+    updateCaseType(caseStore,body,"support_fr"); // local storage update
 
     const item = await getItemByColumnValue('text9',thread_ts); // get item by thread_ts
     const moved_item = await moveItemToGroup('group_title',item.items_by_column_values[0].id); // move item to FR group
-    console.log(caseStore);
-    await say({text:'Thank you for your FR feedback! We will get back to you as soon as possible.',thread_ts:thread_ts});
 
+    await say({text:'Thank you for your FR feedback! We will get back to you as soon as possible.',thread_ts:thread_ts});
 });
 
 app.action('support_bug', async ({ body, ack, say }) => {
-    // Acknowledge the action
     await ack();
-    await say(`<@${body.user.id}> clicked the button`);
+
+    const thread_ts = body.message.thread_ts;
+
+    updateCaseType(caseStore,body,"support_bug"); // local storage update
+
+    const item = await getItemByColumnValue('text9',thread_ts); // get item by thread_ts
+    const moved_item = await moveItemToGroup('topics',item.items_by_column_values[0].id); // move item to FR group
+
+    await say({text:'Thank you for your FR feedback! We will get back to you as soon as possible.',thread_ts:thread_ts});
 });
 
 app.action('support_gi', async ({ body, ack, say }) => {
-    // Acknowledge the action
     await ack();
-    await say(`<@${body.user.id}> clicked the button`);
+
+    const thread_ts = body.message.thread_ts;
+
+    updateCaseType(caseStore,body,"support_gi"); // local storage update
+
+    const item = await getItemByColumnValue('text9',thread_ts); // get item by thread_ts
+    const moved_item = await moveItemToGroup('new_group24572',item.items_by_column_values[0].id); // move item to FR group
+
+    await say({text:'Thank you for your FR feedback! We will get back to you as soon as possible.',thread_ts:thread_ts});
 });
 
 
