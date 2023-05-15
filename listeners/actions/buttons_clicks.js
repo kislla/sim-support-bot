@@ -1,6 +1,6 @@
 //const {updateCaseType} = require("../../utils/local_storage_handlers");
 const {asyncTimeout} = require("../../utils/async_timeout");
-const {getItemByColumnValue, moveItemToGroup} = require("../../monday");
+const {getItemByColumnValue, moveItemToGroup} = require("../../utils/monday");
 const {updateCaseType} = require("../../utils/local_storage_handlers");
 const support_fr = async ({ ack,say, client, body }) => {
     await ack();

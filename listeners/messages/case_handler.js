@@ -1,5 +1,5 @@
 const {asyncTimeout} = require("../../utils/async_timeout");
-const {getItemByColumnValue, addUpdateToItem, createItemObject, addItemToGroup} = require("../../monday");
+const {getItemByColumnValue, addUpdateToItem, createItemObject, addItemToGroup} = require("../../utils/monday");
 const thread_reply = require("../../templates/thread_reply");
 const case_handlers = async ({ message, say, context }) => {
     console.log(message);
