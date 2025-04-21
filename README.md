@@ -1,4 +1,5 @@
-# Stigg Support Bot
+# Sim Support Bot
+A minimalistic Slack based app for handling CS tickets and customer care CRM.
 This is a Slack app is designed to listen to messages in customer channels, gather their input and create a Support ticket in Monday.com.
 
 Each customer message is replied to with a message that asks for more information about the issue. Once the customer replies to the thread, a new comment is added on the ticket.
